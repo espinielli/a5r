@@ -1,0 +1,29 @@
+Package: a5r
+Title: Pentagonal Geospatial Indexing System (DGGS)
+Version: 0.0.0.9000
+Authors@R: 
+    c(person(given = "Enrico",
+             family = "Spinielli",
+             role = c("aut", "cre"),
+             email = "enrico.spinielli@eurocontrol.int",
+             comment = c(ORCID = "0000-0001-8584-9131")),
+    person(given = "Felix",
+             family = "Palmer",
+             role = c("aut"),
+             comment = "author of the js and Rust version of a5"),
+      person(given = "EUROCONTROL",
+             role = c("cph", "fnd")))
+Maintainer: Enrico Spinielli <enrico.spinielli@eurocontrol.int>
+Description: R wrapper for the a5 pentagonal geospatial indexing system,
+    a Discrete Global Grid System (DGGS) implemented in Rust.
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+Config/rextendr/version: 0.4.2
+SystemRequirements: Cargo (Rust's package manager), rustc >= 1.65.0, xz
+Depends: 
+    R (>= 4.2)
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+License: Apache License (>= 2)

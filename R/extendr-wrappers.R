@@ -22,5 +22,17 @@ lon_lat_to_cell <- function(lon, lat, resolution) .Call(wrap__lon_lat_to_cell, l
 #' @export
 cell_to_lon_lat <- function(cell_id) .Call(wrap__cell_to_lon_lat, cell_id)
 
+#' Convert hexadecimal string to A5 cell ID
+#' @param hex hexadecimal string representation of the cell ID.
+#' @return A5 cell ID as a numeric value.
+#' @export
+hex_to_u64 <- function(hex) .Call(wrap__hex_to_u64, hex)
+
+#' Convert A5 cell ID to hexadecimal string
+#' @param cell_id ID of the cell.
+#' @return hexadecimal string representation of the cell ID.
+#' @export
+u64_to_hex <- function(cell_id) .Call(wrap__u64_to_hex, cell_id)
+
 
 # nolint end

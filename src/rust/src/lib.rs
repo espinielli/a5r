@@ -8,8 +8,8 @@ use a5::{
     // get_num_cells,
     // get_res0_cells,
     // get_resolution,
-    // hex_to_u64,
-    // u64_to_hex,
+    hex_to_u64 as a5_hex_to_u64,
+    u64_to_hex as a5_u64_to_hex,
     // compact,
     // uncompact,
     // A5Cell,
@@ -51,6 +51,27 @@ fn cell_to_lon_lat(cell_id: f64) -> Result<List> {
     }
 }
 
+/// Convert hexadecimal string to A5 cell ID
+/// @param hex hexadecimal string representation of the cell ID.
+/// @return A5 cell ID as a numeric value.
+/// @export
+#[extendr]
+fn hex_to_u64(hex: &str) -> Result<f64> {
+    match a5_hex_to_u64(hex) {
+        Ok(cell_id) => Ok(cell_id as f64),
+        Err(e) => Err(Error::Other(format!("Error parsing hex string: {}", e))),
+    }
+}
+
+/// Convert A5 cell ID to hexadecimal string
+/// @param cell_id ID of the cell.
+/// @return hexadecimal string representation of the cell ID.
+/// @export
+#[extendr]
+fn u64_to_hex(cell_id: f64) -> String {
+    a5_u64_to_hex(cell_id as u64)
+}
+
 // Macro to generate exports.
 // This ensures exported functions are registered with R.
 // See corresponding C code in `entrypoint.c`.
@@ -58,4 +79,6 @@ extendr_module! {
     mod a5r;
     fn lon_lat_to_cell;
     fn cell_to_lon_lat;
+    fn hex_to_u64;
+    fn u64_to_hex;
 }

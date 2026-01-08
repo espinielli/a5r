@@ -34,5 +34,11 @@ hex_to_u64 <- function(hex) .Call(wrap__hex_to_u64, hex)
 #' @export
 u64_to_hex <- function(cell_id) .Call(wrap__u64_to_hex, cell_id)
 
+#' Get the resolution of an A5 cell
+#' @param cell_id ID of the cell.
+#' @return resolution level (0-30) of the cell.
+#' @export
+get_resolution <- function(cell_id) .Call(wrap__get_resolution, cell_id)
+
 
 # nolint end

@@ -1,14 +1,14 @@
 use a5::{
     // cell_to_boundary,
     cell_to_lonlat,
-    lonlat_to_cell,
     // cell_area,
     // cell_to_children,
     // cell_to_parent,
     // get_num_cells,
     // get_res0_cells,
-    // get_resolution,
+    get_resolution as a5_get_resolution,
     hex_to_u64 as a5_hex_to_u64,
+    lonlat_to_cell,
     u64_to_hex as a5_u64_to_hex,
     // compact,
     // uncompact,
@@ -72,6 +72,15 @@ fn u64_to_hex(cell_id: f64) -> String {
     a5_u64_to_hex(cell_id as u64)
 }
 
+/// Get the resolution of an A5 cell
+/// @param cell_id ID of the cell.
+/// @return resolution level (0-30) of the cell.
+/// @export
+#[extendr]
+fn get_resolution(cell_id: f64) -> i32 {
+    a5_get_resolution(cell_id as u64)
+}
+
 // Macro to generate exports.
 // This ensures exported functions are registered with R.
 // See corresponding C code in `entrypoint.c`.
@@ -81,4 +90,5 @@ extendr_module! {
     fn cell_to_lon_lat;
     fn hex_to_u64;
     fn u64_to_hex;
+    fn get_resolution;
 }

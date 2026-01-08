@@ -1,6 +1,6 @@
 use a5::{
     // cell_to_boundary,
-    // cell_to_lonlat,
+    cell_to_lonlat,
     lonlat_to_cell,
     // cell_area,
     // cell_to_children,
@@ -33,10 +33,29 @@ fn lon_lat_to_cell(lon: f64, lat: f64, resolution: i32) -> Result<f64> {
     }
 }
 
+/// Convert A5 cell ID to latitude/longitude
+/// @param cell_id ID of the cell.
+/// @export
+#[extendr]
+fn cell_to_lon_lat(cell_id: f64) -> Result<List> {
+    let cell_u64 = cell_id as u64;
+    match cell_to_lonlat(cell_u64) {
+        Ok(lonlat) => Ok(list!(
+            lon = lonlat.longitude.get(),
+            lat = lonlat.latitude.get(),
+        )),
+        Err(e) => Err(Error::Other(format!(
+            "Error converting cell to LatLng: {}",
+            e
+        ))),
+    }
+}
+
 // Macro to generate exports.
 // This ensures exported functions are registered with R.
 // See corresponding C code in `entrypoint.c`.
 extendr_module! {
     mod a5r;
     fn lon_lat_to_cell;
+    fn cell_to_lon_lat;
 }

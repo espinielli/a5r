@@ -17,5 +17,10 @@ NULL
 #' @export
 lon_lat_to_cell <- function(lon, lat, resolution) .Call(wrap__lon_lat_to_cell, lon, lat, resolution)
 
+#' Convert A5 cell ID to latitude/longitude
+#' @param cell_id ID of the cell.
+#' @export
+cell_to_lon_lat <- function(cell_id) .Call(wrap__cell_to_lon_lat, cell_id)
+
 
 # nolint end

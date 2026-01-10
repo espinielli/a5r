@@ -1,7 +1,7 @@
 # a5r <img src="man/figures/logo.png" align="right" height="139" alt="" />
 
 <!-- badges: start -->
-[![R-CMD-check](https://github.com/espinielli/a5r/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/espinielli/a5r/actions/workflows/R-CMD-check.yaml)
+[![R-CMD-check](https://github.com/euctrl-pru/a5r/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/euctrl-pru/a5r/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 **a5r** provides R bindings for the [A5](https://a5geo.org/) pentagonal Discrete Global Grid System (DGGS).
@@ -22,7 +22,7 @@ You can install the development version of a5r from GitHub:
 
 ```r
 # install.packages("pak")
-pak::pak("espinielli/a5r")
+pak::pak("euctrl-pru/a5r")
 ```
  
 **Note:** Building from source requires Rust. Install via [rustup](https://rustup.rs/).

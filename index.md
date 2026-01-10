@@ -92,3 +92,4 @@ Apache License 2.0
 - [A5 website](https://a5geo.org/)
 - [A5 implementation in Rust](https://github.com/felixpalmer/a5-rs)
 - Built with [extendr](https://extendr.github.io/)
+- Co-authored with [Claude Code](https://claude.ai) (Opus 4.5)

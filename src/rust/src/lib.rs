@@ -1,7 +1,9 @@
 use a5::{
     cell_area,
     cell_to_boundary,
+    cell_to_children as a5_cell_to_children,
     cell_to_lonlat,
+    cell_to_parent as a5_cell_to_parent,
     // compact,
     // uncompact,
     // A5Cell,
@@ -9,8 +11,6 @@ use a5::{
     // LonLat,
     // Radians,
     core::cell::CellToBoundaryOptions,
-    // cell_to_children,
-    // cell_to_parent,
     // get_num_cells,
     // get_res0_cells,
     get_resolution as a5_get_resolution,
@@ -114,6 +114,34 @@ fn get_cell_boundary(cell_id: f64, closed: bool, segments: Nullable<i32>) -> Res
     }
 }
 
+/// Get the parent cell at a coarser resolution
+/// @param cell_id ID of the cell.
+/// @param parent_resolution target resolution (must be less than current), or NULL for immediate parent.
+/// @return parent cell ID.
+/// @export
+#[extendr]
+fn cell_to_parent(cell_id: f64, parent_resolution: Nullable<i32>) -> Result<f64> {
+    let cell_u64 = cell_id as u64;
+    match a5_cell_to_parent(cell_u64, parent_resolution.into_option()) {
+        Ok(parent_id) => Ok(parent_id as f64),
+        Err(e) => Err(Error::Other(format!("Error getting parent cell: {}", e))),
+    }
+}
+
+/// Get the children cells at a finer resolution
+/// @param cell_id ID of the cell.
+/// @param child_resolution target resolution (must be greater than current), or NULL for immediate children.
+/// @return vector of child cell IDs.
+/// @export
+#[extendr]
+fn cell_to_children(cell_id: f64, child_resolution: Nullable<i32>) -> Result<Vec<f64>> {
+    let cell_u64 = cell_id as u64;
+    match a5_cell_to_children(cell_u64, child_resolution.into_option()) {
+        Ok(children) => Ok(children.iter().map(|&c| c as f64).collect()),
+        Err(e) => Err(Error::Other(format!("Error getting children cells: {}", e))),
+    }
+}
+
 // Macro to generate exports.
 // This ensures exported functions are registered with R.
 // See corresponding C code in `entrypoint.c`.
@@ -126,4 +154,6 @@ extendr_module! {
     fn get_resolution;
     fn get_cell_area;
     fn get_cell_boundary;
+    fn cell_to_parent;
+    fn cell_to_children;
 }

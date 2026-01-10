@@ -54,5 +54,19 @@ get_cell_area <- function(resolution) .Call(wrap__get_cell_area, resolution)
 #' @export
 get_cell_boundary <- function(cell_id, closed, segments) .Call(wrap__get_cell_boundary, cell_id, closed, segments)
 
+#' Get the parent cell at a coarser resolution
+#' @param cell_id ID of the cell.
+#' @param parent_resolution target resolution (must be less than current), or NULL for immediate parent.
+#' @return parent cell ID.
+#' @export
+cell_to_parent <- function(cell_id, parent_resolution) .Call(wrap__cell_to_parent, cell_id, parent_resolution)
+
+#' Get the children cells at a finer resolution
+#' @param cell_id ID of the cell.
+#' @param child_resolution target resolution (must be greater than current), or NULL for immediate children.
+#' @return vector of child cell IDs.
+#' @export
+cell_to_children <- function(cell_id, child_resolution) .Call(wrap__cell_to_children, cell_id, child_resolution)
+
 
 # nolint end

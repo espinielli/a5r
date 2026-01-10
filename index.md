@@ -1,4 +1,4 @@
-# a5r ![](reference/figures/logo.png)
+# a5r
 
 **a5r** provides R bindings for the [A5](https://a5geo.org/) pentagonal
 Discrete Global Grid System (DGGS).
@@ -22,7 +22,7 @@ You can install the development version of a5r from GitHub:
 
 ``` r
 # install.packages("pak")
-pak::pak("espinielli/a5r")
+pak::pak("euctrl-pru/a5r")
 ```
 
 **Note:** Building from source requires Rust. Install via

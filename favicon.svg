@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="181.65" height="210"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="181.65" height="210"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 181.65 210" width="181.65" height="210">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1"></stop>
+      <stop offset="100%" style="stop-color:#16213e;stop-opacity:1"></stop>
+    </linearGradient>
+    <linearGradient id="pentagonGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00d4aa;stop-opacity:1"></stop>
+      <stop offset="100%" style="stop-color:#00a389;stop-opacity:1"></stop>
+    </linearGradient>
+  </defs>
+  
+  <!-- Hex background -->
+  <polygon points="90.825,2 179.65,54.5 179.65,157.5 90.825,210 2,157.5 2,54.5" fill="url(#bgGradient)" stroke="#00d4aa" stroke-width="4"></polygon>
+  
+  <!-- Irregular Pentagon (from A5 logo, scaled and centered) -->
+  <g transform="translate(105, 72)">
+    <!-- Main irregular pentagon - scaled from original A5 pentagon -->
+    <polygon points="-42,-41 -42,23 -1.1,62.4 47.5,26.6 13.7,-19.4" fill="none" stroke="url(#pentagonGradient)" stroke-width="5" stroke-linejoin="round"></polygon>
+    
+    <!-- Inner irregular pentagon for depth -->
+    <polygon points="-25,-24.6 -25,13.8 -0.7,37.4 28.5,16 8.2,-11.6" fill="url(#pentagonGradient)" opacity="0.3"></polygon>
+    
+    <!-- Center dot -->
+    <circle cx="0" cy="10" r="6" fill="#00d4aa"></circle>
+  </g>
+  
+  <!-- Tagline - between pentagon and name -->
+  <text x="90.825" y="155" text-anchor="middle" font-family="'Fira Sans', 'Helvetica Neue', Arial, sans-serif" font-size="13" fill="#00d4aa">pentagonal DGGS</text>
+  
+  <!-- Package name -->
+  <text x="90.825" y="185" text-anchor="middle" font-family="'Fira Sans', 'Helvetica Neue', Arial, sans-serif" font-size="36" font-weight="bold" fill="#ffffff">a5r</text>
+</svg></svg><style>@media (prefers-color-scheme: light) { :root { filter: none; } }
+@media (prefers-color-scheme: dark) { :root { filter: none; } }
+</style></svg>

@@ -6,6 +6,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Pentagonal Geospatial Indexing System (DGGS) • a5r</title>
+<!-- favicons --><link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="”image/svg+xml”" href="favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" sizes="any" href="favicon.ico">
+<link rel="manifest" href="site.webmanifest">
 <script src="deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
 <script src="deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
@@ -13,6 +18,7 @@
 <script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="Pentagonal Geospatial Indexing System (DGGS)">
 <meta name="description" content="R wrapper for the A5 pentagonal geospatial indexing system, a Discrete Global Grid System (DGGS) implemented in Rust.">
 <meta property="og:description" content="R wrapper for the A5 pentagonal geospatial indexing system, a Discrete Global Grid System (DGGS) implemented in Rust.">
+<meta property="og:image" content="https://euctrl-pru.github.io/a5r/logo.svg">
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
@@ -46,8 +52,10 @@
 </nav><div class="container template-home">
 <div class="row">
   <main id="main" class="col-md-9"><div class="section level1">
-<div class="page-header"><h1 id="a5r-">a5r <img src="reference/figures/logo.png" align="right" height="139" alt=""><a class="anchor" aria-label="anchor" href="#a5r-"></a>
-</h1></div>
+<div class="page-header">
+<img src="logo.svg" class="logo" alt=""><h1 id="a5r-">a5r <a class="anchor" aria-label="anchor" href="#a5r-"></a>
+</h1>
+</div>
 <!-- badges: start -->
 
 <p><strong>a5r</strong> provides R bindings for the <a href="https://a5geo.org/" class="external-link">A5</a> pentagonal Discrete Global Grid System (DGGS).</p>
@@ -70,7 +78,7 @@
 <p>You can install the development version of a5r from GitHub:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># install.packages("pak")</span></span>
-<span><span class="fu">pak</span><span class="fu">::</span><span class="fu"><a href="https://pak.r-lib.org/reference/pak.html" class="external-link">pak</a></span><span class="op">(</span><span class="st">"espinielli/a5r"</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu">pak</span><span class="fu">::</span><span class="fu"><a href="https://pak.r-lib.org/reference/pak.html" class="external-link">pak</a></span><span class="op">(</span><span class="st">"euctrl-pru/a5r"</span><span class="op">)</span></span></code></pre></div>
 <p><strong>Note:</strong> Building from source requires Rust. Install via <a href="https://rustup.rs/" class="external-link">rustup</a>.</p>
 </div>
 <div class="section level2">
@@ -187,7 +195,7 @@
 <div class="dev-status">
 <h2 data-toc-skip>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://github.com/espinielli/a5r/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/espinielli/a5r/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></li>
+<li><a href="https://github.com/euctrl-pru/a5r/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/euctrl-pru/a5r/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></li>
 </ul>
 </div>
 

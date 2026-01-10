@@ -27,7 +27,7 @@ test_that("get_cell_area returns reasonable values at high resolution", {
   # At resolution 20, cells should be small (~31 m²)
   area_res20 <- get_cell_area(20)
   expect_true(area_res20 < 100) # Less than 100 m²
-  expect_true(area_res20 > 1)   # More than 1 m²
+  expect_true(area_res20 > 1) # More than 1 m²
 
   # At resolution 24, cells should be sub-meter scale
 

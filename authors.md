@@ -15,14 +15,17 @@
 
 ## Citation
 
+Source:
+[`DESCRIPTION`](https://github.com/euctrl-pru/a5r/blob/main/DESCRIPTION)
+
 Spinielli E, Palmer F, (Opus 4.5) C (2026). *a5r: Pentagonal Geospatial
 Indexing System (DGGS)*. R package version 0.0.0.9000,
-<https://espinielli.github.io/a5r/>.
+<https://euctrl-pru.github.io/a5r/>.
 
     @Manual{,
       title = {a5r: Pentagonal Geospatial Indexing System (DGGS)},
       author = {Enrico Spinielli and Felix Palmer and Claude Code {(Opus 4.5)}},
       year = {2026},
       note = {R package version 0.0.0.9000},
-      url = {https://espinielli.github.io/a5r/},
+      url = {https://euctrl-pru.github.io/a5r/},
     }

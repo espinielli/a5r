@@ -80,6 +80,13 @@ get_cell_area(10)
 #> [1] 33201823
 ```
 
+## Todo's
+Big inspiration from the [`h3o` R package](https://extendr.rs/h3o/index.html):
+[ ] make `a5r` work with the {sf} package for geometric operations.
+    Mimick the [`h3_from_points` et Co.](https://extendr.rs/h3o/reference/H3.html)
+[ ] define the A5 class as {vctrs}, to make it work seamlessly within
+    a tidyverse workflow
+
 ## License
 
 Apache License 2.0

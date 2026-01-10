@@ -11,8 +11,8 @@ use a5::{
     // LonLat,
     // Radians,
     core::cell::CellToBoundaryOptions,
-    // get_num_cells,
-    // get_res0_cells,
+    get_num_cells as a5_get_num_cells,
+    get_res0_cells as a5_get_res0_cells,
     get_resolution as a5_get_resolution,
     hex_to_u64 as a5_hex_to_u64,
     lonlat_to_cell,
@@ -142,6 +142,26 @@ fn cell_to_children(cell_id: f64, child_resolution: Nullable<i32>) -> Result<Vec
     }
 }
 
+/// Get the number of cells at a given resolution
+/// @param resolution resolution level (0-30).
+/// @return number of cells at the specified resolution.
+/// @export
+#[extendr]
+fn get_num_cells(resolution: i32) -> f64 {
+    a5_get_num_cells(resolution) as f64
+}
+
+/// Get all resolution 0 (base) cells
+/// @return vector of all 12 base cell IDs.
+/// @export
+#[extendr]
+fn get_res0_cells() -> Result<Vec<f64>> {
+    match a5_get_res0_cells() {
+        Ok(cells) => Ok(cells.iter().map(|&c| c as f64).collect()),
+        Err(e) => Err(Error::Other(format!("Error getting res0 cells: {}", e))),
+    }
+}
+
 // Macro to generate exports.
 // This ensures exported functions are registered with R.
 // See corresponding C code in `entrypoint.c`.
@@ -156,4 +176,6 @@ extendr_module! {
     fn get_cell_boundary;
     fn cell_to_parent;
     fn cell_to_children;
+    fn get_num_cells;
+    fn get_res0_cells;
 }

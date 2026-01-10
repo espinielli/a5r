@@ -68,5 +68,16 @@ cell_to_parent <- function(cell_id, parent_resolution) .Call(wrap__cell_to_paren
 #' @export
 cell_to_children <- function(cell_id, child_resolution) .Call(wrap__cell_to_children, cell_id, child_resolution)
 
+#' Get the number of cells at a given resolution
+#' @param resolution resolution level (0-30).
+#' @return number of cells at the specified resolution.
+#' @export
+get_num_cells <- function(resolution) .Call(wrap__get_num_cells, resolution)
+
+#' Get all resolution 0 (base) cells
+#' @return vector of all 12 base cell IDs.
+#' @export
+get_res0_cells <- function() .Call(wrap__get_res0_cells)
+
 
 # nolint end

@@ -1,0 +1,26 @@
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://espinielli.github.io/a5r/404.html</loc></url>
+<url><loc>https://espinielli.github.io/a5r/LICENSE.html</loc></url>
+<url><loc>https://espinielli.github.io/a5r/authors.html</loc></url>
+<url><loc>https://espinielli.github.io/a5r/index.html</loc></url>
+<url><loc>https://espinielli.github.io/a5r/reference/a5_from_hex.html</loc></url>
+<url><loc>https://espinielli.github.io/a5r/reference/a5_from_lonlat.html</loc></url>
+<url><loc>https://espinielli.github.io/a5r/reference/a5_resolution.html</loc></url>
+<url><loc>https://espinielli.github.io/a5r/reference/a5_to_hex.html</loc></url>
+<url><loc>https://espinielli.github.io/a5r/reference/a5_to_lonlat.html</loc></url>
+<url><loc>https://espinielli.github.io/a5r/reference/cell_to_children.html</loc></url>
+<url><loc>https://espinielli.github.io/a5r/reference/cell_to_lon_lat.html</loc></url>
+<url><loc>https://espinielli.github.io/a5r/reference/cell_to_parent.html</loc></url>
+<url><loc>https://espinielli.github.io/a5r/reference/compact.html</loc></url>
+<url><loc>https://espinielli.github.io/a5r/reference/get_cell_area.html</loc></url>
+<url><loc>https://espinielli.github.io/a5r/reference/get_cell_boundary.html</loc></url>
+<url><loc>https://espinielli.github.io/a5r/reference/get_num_cells.html</loc></url>
+<url><loc>https://espinielli.github.io/a5r/reference/get_res0_cells.html</loc></url>
+<url><loc>https://espinielli.github.io/a5r/reference/get_resolution.html</loc></url>
+<url><loc>https://espinielli.github.io/a5r/reference/hex_to_u64.html</loc></url>
+<url><loc>https://espinielli.github.io/a5r/reference/index.html</loc></url>
+<url><loc>https://espinielli.github.io/a5r/reference/lon_lat_to_cell.html</loc></url>
+<url><loc>https://espinielli.github.io/a5r/reference/u64_to_hex.html</loc></url>
+<url><loc>https://espinielli.github.io/a5r/reference/uncompact.html</loc></url>
+</urlset>
+

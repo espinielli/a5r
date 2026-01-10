@@ -4,7 +4,7 @@
 [![R-CMD-check](https://github.com/espinielli/a5r/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/espinielli/a5r/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
-**a5r** provides R bindings for the [A5](https://github.com/a5geo/a5) pentagonal Discrete Global Grid System (DGGS).
+**a5r** provides R bindings for the [A5](https://a5geo.org/) pentagonal Discrete Global Grid System (DGGS).
 
 A5 is a hierarchical geospatial indexing system that partitions the Earth's surface into pentagonal cells. Unlike hexagonal systems like H3, A5 uses pentagons which tile the sphere without requiring special irregular cells.
 
@@ -86,5 +86,7 @@ Apache License 2.0
 
 ## Acknowledgements
 
-- [A5](https://github.com/a5geo/a5) by Felix Palmer
+- [A5 reference implementation](https://github.com/felixpalmer/a5) by Felix Palmer
+- [A5 website](https://a5geo.org/)
+- [A5 implementation in Rust](https://github.com/felixpalmer/a5-rs)
 - Built with [extendr](https://extendr.github.io/)

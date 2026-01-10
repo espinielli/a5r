@@ -6,7 +6,7 @@
   [](https://orcid.org/0000-0001-8584-9131)
 
 - **Felix Palmer**. Author.  
-  author of the js and Rust version of a5
+  author of the js and Rust version of A5
 
 - **EUROCONTROL**. Copyright holder, funder.
 

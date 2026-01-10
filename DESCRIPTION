@@ -11,6 +11,10 @@ Authors@R:
              family = "Palmer",
              role = c("aut"),
              comment = "author of the js and Rust version of A5"),
+    person(given = "Claude Code",
+             family = "(Opus 4.5)",
+             role = c("aut"),
+             comment = "AI coding assistant by Anthropic"),
       person(given = "EUROCONTROL",
              role = c("cph", "fnd")))
 Maintainer: Enrico Spinielli <enrico.spinielli@eurocontrol.int>

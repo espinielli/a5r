@@ -33,4 +33,5 @@ Suggests:
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
 License: Apache License (>= 2)
-URL: https://espinielli.github.io/a5r/
+URL: https://euctrl-pru.github.io/a5r/, https://github.com/euctrl-pru/a5r
+BugReports: https://github.com/euctrl-pru/a5r/issues

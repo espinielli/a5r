@@ -46,5 +46,13 @@ get_resolution <- function(cell_id) .Call(wrap__get_resolution, cell_id)
 #' @export
 get_cell_area <- function(resolution) .Call(wrap__get_cell_area, resolution)
 
+#' Get the boundary of an A5 cell as a list of coordinates
+#' @param cell_id ID of the cell.
+#' @param closed whether to close the ring by repeating the first point (default: TRUE).
+#' @param segments number of segments per edge, or NULL for automatic (default: NULL).
+#' @return a list with `lon` and `lat` vectors representing the boundary vertices.
+#' @export
+get_cell_boundary <- function(cell_id, closed, segments) .Call(wrap__get_cell_boundary, cell_id, closed, segments)
+
 
 # nolint end

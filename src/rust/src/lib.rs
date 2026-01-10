@@ -1,7 +1,14 @@
 use a5::{
     cell_area,
-    // cell_to_boundary,
+    cell_to_boundary,
     cell_to_lonlat,
+    // compact,
+    // uncompact,
+    // A5Cell,
+    // Degrees,
+    // LonLat,
+    // Radians,
+    core::cell::CellToBoundaryOptions,
     // cell_to_children,
     // cell_to_parent,
     // get_num_cells,
@@ -10,12 +17,6 @@ use a5::{
     hex_to_u64 as a5_hex_to_u64,
     lonlat_to_cell,
     u64_to_hex as a5_u64_to_hex,
-    // compact,
-    // uncompact,
-    // A5Cell,
-    // Degrees,
-    // LonLat,
-    // Radians,
 };
 use extendr_api::prelude::*;
 
@@ -90,6 +91,29 @@ fn get_cell_area(resolution: i32) -> f64 {
     cell_area(resolution)
 }
 
+/// Get the boundary of an A5 cell as a list of coordinates
+/// @param cell_id ID of the cell.
+/// @param closed whether to close the ring by repeating the first point (default: TRUE).
+/// @param segments number of segments per edge, or NULL for automatic (default: NULL).
+/// @return a list with `lon` and `lat` vectors representing the boundary vertices.
+/// @export
+#[extendr]
+fn get_cell_boundary(cell_id: f64, closed: bool, segments: Nullable<i32>) -> Result<List> {
+    let opts = CellToBoundaryOptions {
+        closed_ring: closed,
+        segments: segments.into_option(),
+    };
+    let cell_u64 = cell_id as u64;
+    match cell_to_boundary(cell_u64, Some(opts)) {
+        Ok(boundary) => {
+            let lons: Vec<f64> = boundary.iter().map(|ll| ll.longitude.get()).collect();
+            let lats: Vec<f64> = boundary.iter().map(|ll| ll.latitude.get()).collect();
+            Ok(list!(lon = lons, lat = lats))
+        }
+        Err(e) => Err(Error::Other(format!("Error getting cell boundary: {}", e))),
+    }
+}
+
 // Macro to generate exports.
 // This ensures exported functions are registered with R.
 // See corresponding C code in `entrypoint.c`.
@@ -101,4 +125,5 @@ extendr_module! {
     fn u64_to_hex;
     fn get_resolution;
     fn get_cell_area;
+    fn get_cell_boundary;
 }

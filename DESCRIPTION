@@ -10,11 +10,11 @@ Authors@R:
     person(given = "Felix",
              family = "Palmer",
              role = c("aut"),
-             comment = "author of the js and Rust version of a5"),
+             comment = "author of the js and Rust version of A5"),
       person(given = "EUROCONTROL",
              role = c("cph", "fnd")))
 Maintainer: Enrico Spinielli <enrico.spinielli@eurocontrol.int>
-Description: R wrapper for the a5 pentagonal geospatial indexing system,
+Description: R wrapper for the A5 pentagonal geospatial indexing system,
     a Discrete Global Grid System (DGGS) implemented in Rust.
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)

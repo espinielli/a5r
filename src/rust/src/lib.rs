@@ -1,18 +1,9 @@
 use a5::{
-    cell_area,
-    cell_to_boundary,
-    cell_to_children as a5_cell_to_children,
-    cell_to_lonlat,
-    cell_to_parent as a5_cell_to_parent,
-    compact as a5_compact,
-    uncompact as a5_uncompact,
-    core::cell::CellToBoundaryOptions,
-    get_num_cells as a5_get_num_cells,
-    get_res0_cells as a5_get_res0_cells,
-    get_resolution as a5_get_resolution,
-    hex_to_u64 as a5_hex_to_u64,
-    lonlat_to_cell,
-    u64_to_hex as a5_u64_to_hex,
+    cell_area, cell_to_boundary, cell_to_children as a5_cell_to_children, cell_to_lonlat,
+    cell_to_parent as a5_cell_to_parent, compact as a5_compact, core::cell::CellToBoundaryOptions,
+    get_num_cells as a5_get_num_cells, get_res0_cells as a5_get_res0_cells,
+    get_resolution as a5_get_resolution, hex_to_u64 as a5_hex_to_u64, lonlat_to_cell,
+    u64_to_hex as a5_u64_to_hex, uncompact as a5_uncompact,
 };
 use extendr_api::prelude::*;
 

@@ -10,7 +10,7 @@ test_that("compact merges complete sibling group to parent", {
   children <- cell_to_children(cell_res5, NULL)
 
   # Compact should return the parent
- compacted <- compact(children)
+  compacted <- compact(children)
   expect_equal(length(compacted), 1)
   expect_equal(compacted[1], cell_res5)
 })
@@ -88,7 +88,7 @@ test_that("uncompact expands to immediate children", {
   cell_res5 <- lon_lat_to_cell(4.4, 52.0, 5)
   expanded <- uncompact(cell_res5, 6)
 
-  expect_equal(length(expanded), 4)  # 4 children per cell at Hilbert levels
+  expect_equal(length(expanded), 4) # 4 children per cell at Hilbert levels
   expect_true(all(sapply(expanded, get_resolution) == 6))
 })
 
@@ -122,7 +122,7 @@ test_that("uncompact handles multiple input cells", {
   cells <- c(cell1, cell2)
   expanded <- uncompact(cells, 6)
 
-  expect_equal(length(expanded), 8)  # 4 children each
+  expect_equal(length(expanded), 8) # 4 children each
   expect_true(all(sapply(expanded, get_resolution) == 6))
 })
 

@@ -79,5 +79,18 @@ get_num_cells <- function(resolution) .Call(wrap__get_num_cells, resolution)
 #' @export
 get_res0_cells <- function() .Call(wrap__get_res0_cells)
 
+#' Compact a set of cells by merging complete sibling groups into parent cells
+#' @param cells vector of cell IDs to compact.
+#' @return vector of compacted cell IDs (typically smaller than input).
+#' @export
+compact <- function(cells) .Call(wrap__compact, cells)
+
+#' Uncompact (expand) cells to a target resolution
+#' @param cells vector of cell IDs to expand.
+#' @param target_resolution the target resolution for all output cells.
+#' @return vector of cell IDs all at the target resolution.
+#' @export
+uncompact <- function(cells, target_resolution) .Call(wrap__uncompact, cells, target_resolution)
+
 
 # nolint end

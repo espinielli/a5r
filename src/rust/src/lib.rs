@@ -4,12 +4,8 @@ use a5::{
     cell_to_children as a5_cell_to_children,
     cell_to_lonlat,
     cell_to_parent as a5_cell_to_parent,
-    // compact,
-    // uncompact,
-    // A5Cell,
-    // Degrees,
-    // LonLat,
-    // Radians,
+    compact as a5_compact,
+    uncompact as a5_uncompact,
     core::cell::CellToBoundaryOptions,
     get_num_cells as a5_get_num_cells,
     get_res0_cells as a5_get_res0_cells,
@@ -162,6 +158,33 @@ fn get_res0_cells() -> Result<Vec<f64>> {
     }
 }
 
+/// Compact a set of cells by merging complete sibling groups into parent cells
+/// @param cells vector of cell IDs to compact.
+/// @return vector of compacted cell IDs (typically smaller than input).
+/// @export
+#[extendr]
+fn compact(cells: Vec<f64>) -> Result<Vec<f64>> {
+    let cells_u64: Vec<u64> = cells.iter().map(|&c| c as u64).collect();
+    match a5_compact(&cells_u64) {
+        Ok(compacted) => Ok(compacted.iter().map(|&c| c as f64).collect()),
+        Err(e) => Err(Error::Other(format!("Error compacting cells: {}", e))),
+    }
+}
+
+/// Uncompact (expand) cells to a target resolution
+/// @param cells vector of cell IDs to expand.
+/// @param target_resolution the target resolution for all output cells.
+/// @return vector of cell IDs all at the target resolution.
+/// @export
+#[extendr]
+fn uncompact(cells: Vec<f64>, target_resolution: i32) -> Result<Vec<f64>> {
+    let cells_u64: Vec<u64> = cells.iter().map(|&c| c as u64).collect();
+    match a5_uncompact(&cells_u64, target_resolution) {
+        Ok(expanded) => Ok(expanded.iter().map(|&c| c as f64).collect()),
+        Err(e) => Err(Error::Other(format!("Error uncompacting cells: {}", e))),
+    }
+}
+
 // Macro to generate exports.
 // This ensures exported functions are registered with R.
 // See corresponding C code in `entrypoint.c`.
@@ -178,4 +201,6 @@ extendr_module! {
     fn cell_to_children;
     fn get_num_cells;
     fn get_res0_cells;
+    fn compact;
+    fn uncompact;
 }

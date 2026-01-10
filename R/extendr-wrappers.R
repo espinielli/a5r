@@ -40,5 +40,11 @@ u64_to_hex <- function(cell_id) .Call(wrap__u64_to_hex, cell_id)
 #' @export
 get_resolution <- function(cell_id) .Call(wrap__get_resolution, cell_id)
 
+#' Get the area of a cell at a given resolution
+#' @param resolution resolution level (0-30).
+#' @return area in square meters.
+#' @export
+get_cell_area <- function(resolution) .Call(wrap__get_cell_area, resolution)
+
 
 # nolint end

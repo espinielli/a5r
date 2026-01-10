@@ -1,7 +1,7 @@
 use a5::{
+    cell_area,
     // cell_to_boundary,
     cell_to_lonlat,
-    // cell_area,
     // cell_to_children,
     // cell_to_parent,
     // get_num_cells,
@@ -81,6 +81,15 @@ fn get_resolution(cell_id: f64) -> i32 {
     a5_get_resolution(cell_id as u64)
 }
 
+/// Get the area of a cell at a given resolution
+/// @param resolution resolution level (0-30).
+/// @return area in square meters.
+/// @export
+#[extendr]
+fn get_cell_area(resolution: i32) -> f64 {
+    cell_area(resolution)
+}
+
 // Macro to generate exports.
 // This ensures exported functions are registered with R.
 // See corresponding C code in `entrypoint.c`.
@@ -91,4 +100,5 @@ extendr_module! {
     fn hex_to_u64;
     fn u64_to_hex;
     fn get_resolution;
+    fn get_cell_area;
 }
